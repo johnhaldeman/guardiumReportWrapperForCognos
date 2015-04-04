@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+
+    <display-name>GuardiumJSONtoXML</display-name>
+
+	<servlet>
+		<servlet-name>xmlReport</servlet-name>
+		<servlet-class>com.infoinsightsllc.guardrest.xmlReport</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>xmlReport</servlet-name>
+		<url-pattern>/GuardiumJSONtoXML/xmlReport</url-pattern>
+	</servlet-mapping>
+	
+
+    <!-- This is a context init parameter -->
+    <context-param>
+        <param-name>client_id</param-name>
+        <param-value>GuardiumJSONtoXML</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>client_secret</param-name>
+        <param-value>--Your Guardium REST API Client Secret Goes Here--</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>gui_user</param-name>
+        <param-value>--Your  GUI User Goes Here--</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>gui_password</param-name>
+        <param-value>--The password for the GUI User goes here--</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>sqlguard_appl</param-name>
+        <param-value>--Guardium appliance URL you would like to run the REST calls goes here--</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>sqlguard_port</param-name>
+        <param-value>--Port for Guardium appliance GUI goes here: normally 8443--</param-value>
+    </context-param>
+
+</web-app>
